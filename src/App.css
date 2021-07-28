@@ -1,38 +1,260 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#overlay img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  padding: 20px;
+  max-width: 1268px;
+  margin: 0 auto;
+  margin-top: 50px;
   display: flex;
-  flex-direction: column;
+}
+
+#table-section {
+  width: 60%;
+}
+
+a {
+  text-decoration: none;
+}
+.search-icon{
+    margin: 5px;
+    cursor: pointer;
+    color: darkslategrey;
+}
+form {
+  border: 1px solid black;
+  width: 230px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+button,
+input,
+textarea {
+  font-family: "Lato", sans-serif;
+  outline: unset;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#info-wrapper {
+  width: 40%;
+  padding: 0 0 20px 0;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+}
+
+h1 {
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+#info-wrapper p {
+  font-style: italic;
+  color: gray;
+}
+
+#info-content {
+  margin-top: 10px;
+}
+
+#info-wrapper > div {
+  margin-bottom: 5px;
+}
+
+textarea {
+  white-space: normal;
+  width: 100%;
+  z-index: 2;
+  margin: 0;
+  border: 2px solid black;
+  border-radius: 0;
+  color: #444;
+  background-color: transparent;
+  overflow: auto;
+  resize: none;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+input {
+  font-size: 16px;
+  border: unset;
+  width: 100%;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  color: transparent;
+}
+
+img {
+  width: 16px;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+#table-wrapper {
+  box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
+}
+
+#table-headers {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
+}
+
+#table-data {
+  max-height: 500px;
+  overflow-y: overlay;
+}
+
+@-moz-document url-prefix() {
+  #table-data {
+    overflow-y: scroll;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+#table-data tr {
+  cursor: pointer;
+}
+
+#table-data tr:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+th {
+  font-size: 16px;
+  color: #000;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  line-height: 1.4;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  cursor: pointer;
+}
+
+td {
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.4;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+#info-content div{
+    font-weight: bold;
+}
+#info-content span{
+    font-weight: 400;
+    color: rgb(54, 53, 53);
+}
+.column1 {
+  width: 80px;
+}
+
+.column2 {
+  width: 80px;
+}
+
+.column3 {
+  width: 90px;
+}
+
+.column4 {
+  width: 90px;
+}
+
+.column5 {
+  width: 95px;
+}
+.column6 {
+  width: 100px;
+}
+.column7 {
+  width: 150px;
+}
+.column8 {
+  width: 150px;
+}
+.filted_data {
+  width: 150px;
+  font-size: 0.95em;
+  color: #00000;
+  padding: 6px 16px;
+  border-radius: 5px;
+  border: 1px solid LightGray;
+  cursor: pointer;
+  margin: 5px;
+  border-left: 7px solid blue;
+}
+.filter_contar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.filter_metrics{
+  border: 1px solid Gray;
+  box-shadow: 0px 0px 0px 1px Gray;
+  padding: 20px;
+}
+.filter_btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.filter_btn button{
+  padding: 6px;
+  margin: 5px;
+  cursor: pointer;
+  border: none;
+  border: 1px solid LightGray;
+  border-radius: 5px;
+}
+.filter_btn .btn1{
+  color: blue;
+  background-color: #fff;
+}
+.filter_btn .btn2{
+  color: #fff;
+  background-color: blue;
+}
+.btn3{
+  color: #000000;
+  background-color: #fff;
+  cursor: pointer;
+  border: none;
+  border: 1px solid LightGray;
+  padding: 6px;
+  font-size: 18px;
+  border-radius: 5px;
 }
