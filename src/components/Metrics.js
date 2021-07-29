@@ -14,7 +14,7 @@ function Metrics() {
           <h1>Analytics</h1>
         </div>
          <div style={{marginTop: "30px", margin: "10px"}}>
-            <button className="btn3"><FaCalendarAlt style={{color: "blue"}} /> Abcd - Jul 14, 2021</button>
+            <button className="btn3"><FaCalendarAlt style={{color: "blue"}} />July 08 - Jul 14,2021</button>
             <button style={{float: "right"}} className="btn3" onClick={formToggle} ><VscSettings style={{color: "blue"}} /> Settings</button>
          </div>
         {cardForm && (
